@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.active{
+    @apply text-blue-600
+}
+.yellow-badge{
+    @apply px-2 bg-yellow-400 rounded-lg mb-3
+}
+.btn-blue{
+    @apply px-4 py-2 text-2xl rounded  flex items-center justify-center
+}
+.section-center{
+    @apply flex items-center justify-between w-11/12 mx-auto py-5 px-8
+}
