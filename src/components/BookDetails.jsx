@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
+import LoadingSpinner from './LoadingSpinner';
 
 const BookDetails = () => {
     const book = useLoaderData()
     const [fold, setFold] = useState(true)
-    console.log(book);
+
+    const navigation = useNavigation()
+    if (navigation.state === 'loading') {
+        return <LoadingSpinner></LoadingSpinner>
+    }
     return (
         <div className='section-center border-gray-400  rounded-lg border mt-5 shadow-lg lg:mt-5'>
             <div className='grid md:grid-cols-2 sm:grid-cols-1 w-11/12 align-center'>

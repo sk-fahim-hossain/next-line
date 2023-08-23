@@ -1,13 +1,19 @@
 
 import React from 'react';
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from '../assets/animation.json';
+import LoadingSpinner from './LoadingSpinner';
 
 
 const Home = () => {
+ const navigation = useNavigation()
+ if(navigation.state === 'loading'){
+    return <LoadingSpinner></LoadingSpinner>
+ }
 
+ 
     return (
         <div className='section-center flex-col-reverse  md:flex-row lg:flex-row sm:flex-col-reverse'>
             <div className="info">
